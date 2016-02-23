@@ -1,4 +1,4 @@
-# knit
+# knit [![Circle CI](https://circleci.com/gh/ntaro/knit/tree/master.svg?style=shield)](https://circleci.com/gh/ntaro/knit/tree/master) [ ![Download](https://api.bintray.com/packages/ngsw-taro/maven/knit/images/download.svg) ](https://bintray.com/ngsw-taro/maven/knit/_latestVersion)
 
 JUnit API set for Kotlin.
 
