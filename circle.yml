@@ -1,0 +1,11 @@
+general:
+  artifacts:
+    - build/reports
+
+machine:
+  timezone:
+    Asia/Tokyo
+
+test:
+  override:
+    - ./gradlew test
