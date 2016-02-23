@@ -17,10 +17,17 @@ group 'com.taroid.knit'
 version VERSION
 
 bintray {
-    Properties properties = new Properties()
-    properties.load(rootProject.file('local.properties').newDataInputStream())
-    user = properties.getProperty('bintray.user')
-    key = properties.getProperty('bintray.apiKey')
+    def propertiesFile = rootProject.file('local.properties')
+    if (propertiesFile.exists()) {
+        Properties properties = new Properties()
+        properties.load(propertiesFile.newDataInputStream())
+        user = properties.getProperty('bintray.user')
+        key = properties.getProperty('bintray.apiKey')
+    } else {
+        user = System.getenv('BINTRAY_USER')
+        key = System.getenv('BINTRAY_API_KEY')
+    }
+
     configurations = ['archives']
     pkg {
         repo = 'maven'
@@ -37,7 +44,7 @@ bintray {
 
         version {
             name = VERSION
-            released  = new Date()
+            released = new Date()
         }
     }
 }
