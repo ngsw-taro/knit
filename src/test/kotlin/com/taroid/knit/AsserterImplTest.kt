@@ -18,12 +18,12 @@ class AsserterImplTest {
     class `be - expected` {
 
         @Test
-        fun `dose nothing when target equals expected`() {
+        fun `does nothing when target equals expected`() {
             sut be java.lang.String("Kotlin").toString()
         }
 
         @Test(expected = AssertionError::class)
-        fun `throws error when target dose not equal expected`() {
+        fun `throws error when target does not equal expected`() {
             sut be "kotlin"
         }
     }
@@ -31,12 +31,12 @@ class AsserterImplTest {
     class `be - matcher` {
 
         @Test
-        fun `dose nothing when target matches specified matcher`() {
+        fun `does nothing when target matches specified matcher`() {
             sut be sameInstance("Kotlin")
         }
 
         @Test(expected = AssertionError::class)
-        fun `throws error when target dose not match specified matcher`() {
+        fun `throws error when target does not match specified matcher`() {
             sut be sameInstance(java.lang.String("Kotlin").toString())
         }
     }
@@ -44,12 +44,12 @@ class AsserterImplTest {
     class `be - block` {
 
         @Test
-        fun `dose nothing when target equals what block returns`() {
+        fun `does nothing when target equals what block returns`() {
             sut be { java.lang.String("Kotlin").toString() }
         }
 
         @Test(expected = AssertionError::class)
-        fun `throws error when target dose not equal what block returns`() {
+        fun `throws error when target does not equal what block returns`() {
             sut be { "kotlin" }
         }
     }
@@ -57,7 +57,7 @@ class AsserterImplTest {
     class `notBe - unexpected` {
 
         @Test
-        fun `dose nothing when target dose not equal unexpected`() {
+        fun `does nothing when target does not equal unexpected`() {
             sut notBe "kotlin"
         }
 
@@ -70,7 +70,7 @@ class AsserterImplTest {
     class `notBe - matcher` {
 
         @Test
-        fun `dose nothing when target dose not match specified matcher`() {
+        fun `does nothing when target does not match specified matcher`() {
             sut notBe sameInstance(java.lang.String("Kotlin").toString())
         }
 
@@ -83,7 +83,7 @@ class AsserterImplTest {
     class `notBe - block` {
 
         @Test
-        fun `dose nothing when target dose not equal what block returns`() {
+        fun `does nothing when target does not equal what block returns`() {
             sut notBe { "kotlin" }
         }
 
@@ -96,12 +96,12 @@ class AsserterImplTest {
     class `invoke` {
 
         @Test
-        fun `dose nothing when target matches specified matcher`() {
+        fun `does nothing when target matches specified matcher`() {
             sut(startsWith("Ko"))
         }
 
         @Test(expected = AssertionError::class)
-        fun `throws error when target dose not match specified matcher`() {
+        fun `throws error when target does not match specified matcher`() {
             sut(startsWith("ko"))
         }
     }
@@ -109,7 +109,7 @@ class AsserterImplTest {
     class `not` {
 
         @Test
-        fun `dose nothing when target dose not match specified matcher`() {
+        fun `does nothing when target does not match specified matcher`() {
             sut not startsWith("ko")
         }
 
