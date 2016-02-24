@@ -13,9 +13,9 @@ class UnitTest {
 
 ## Note
 
-**Exprimental version**
+**Experimental version**
 
-It cannot recommended to use in your production now.
+It cannot recommended to use in production now.
 
 ## Installation
 
