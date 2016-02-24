@@ -93,19 +93,6 @@ class AsserterImplTest {
         }
     }
 
-    class `invoke` {
-
-        @Test
-        fun `does nothing when target matches specified matcher`() {
-            sut(startsWith("Ko"))
-        }
-
-        @Test(expected = AssertionError::class)
-        fun `throws error when target does not match specified matcher`() {
-            sut(startsWith("ko"))
-        }
-    }
-
     class `not` {
 
         @Test

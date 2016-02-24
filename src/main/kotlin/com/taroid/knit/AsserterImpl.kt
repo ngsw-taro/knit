@@ -7,20 +7,16 @@ import org.junit.Assert.assertThat
 
 internal class AsserterImpl<T>(override val target: T): Asserter<T> {
 
-    override fun invoke(matcher: Matcher<T>) {
-        assertThat(target, matcher)
-    }
-
-    override fun not(matcher: Matcher<T>) {
-        invoke(CoreMatchers.not(matcher))
+    override fun not(matcher: Matcher<in T>) {
+        target.should(CoreMatchers.not(matcher))
     }
 
     override fun be(expected: T) {
-        invoke(`is`(expected))
+        target.should(`is`(expected))
     }
 
-    override fun be(matcher: Matcher<T>) {
-        invoke(matcher)
+    override fun be(matcher: Matcher<in T>) {
+        target.should(matcher)
     }
 
     override fun be(block: () -> T) {
@@ -28,10 +24,10 @@ internal class AsserterImpl<T>(override val target: T): Asserter<T> {
     }
 
     override fun notBe(unexpected: T) {
-        invoke(CoreMatchers.not(unexpected))
+        target.should(CoreMatchers.not(unexpected))
     }
 
-    override fun notBe(matcher: Matcher<T>) {
+    override fun notBe(matcher: Matcher<in T>) {
         not(matcher)
     }
 
