@@ -6,7 +6,7 @@ JUnit API set for Kotlin.
 class UnitTest {
     @Test
     fun test() {
-        (1 + 2).should be 3
+        (1 + 2).should be 3  // assertThat(1 + 2, `is`(3))
     }
 }
 ```
@@ -27,7 +27,7 @@ repositories {
 }
 
 dependencies {
-    testCompile 'com.taroid.knit:knit:0.1.0'
+    testCompile 'com.taroid.knit:knit:0.1.2'
 }
 ```
 
